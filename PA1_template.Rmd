@@ -31,7 +31,6 @@ The dataset is stored in a comma-separated-value (CSV) file and there are a tota
 Unzip data to obtain a csv file.
 
 ```{r}
-library("data.table")
 library(ggplot2)
 fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
 download.file(fileUrl, destfile = paste0(getwd(), '/repdata%2Fdata%2Factivity.zip'))
@@ -39,9 +38,6 @@ unzip("repdata%2Fdata%2Factivity.zip",exdir = "data")
 ```
 
 ## Reading csv Data into Data.Table. 
-```{r}
-activityDT <- data.table::fread(input = "data/activity.csv")
-```
 ```{r}
 data <- read.csv("data/activity.csv")
 

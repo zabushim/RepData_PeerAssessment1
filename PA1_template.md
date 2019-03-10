@@ -30,7 +30,6 @@ Unzip data to obtain a csv file.
 
 
 ```r
-library("data.table")
 library(ggplot2)
 fileUrl <- "https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
 download.file(fileUrl, destfile = paste0(getwd(), '/repdata%2Fdata%2Factivity.zip'))
@@ -38,10 +37,6 @@ unzip("repdata%2Fdata%2Factivity.zip",exdir = "data")
 ```
 
 ## Reading csv Data into Data.Table. 
-
-```r
-activityDT <- data.table::fread(input = "data/activity.csv")
-```
 
 ```r
 data <- read.csv("data/activity.csv")
@@ -66,7 +61,7 @@ ggplot(stepsTotal, aes(steps)) +
     labs(title = "Number Daily Steps per Day", x = "Steps", y = "Frequency")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 3. Calculate and report the mean and median of the total number of steps taken per day
 
@@ -90,7 +85,7 @@ ggplot(stepsInterval, aes(interval, steps)) +
   labs(x = "Time Intervals", y = "Average Steps per Day", title = "Average Number Of Steps Taken Across All Days")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -158,7 +153,7 @@ ggplot(stepsimputeTotal, aes(steps)) +
     labs(title = "Number Daily Steps per Day", x = "Steps", y = "Frequency")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
 
 ```r
 stepsimputeMean <- mean(stepsimputeTotal$steps)
@@ -203,4 +198,4 @@ ggplot(meanimputedata, aes(interval, steps, color = dayType)) +
   labs(title = "Difference Between Weekdays and Weekends", x = "Time Interval", y = "Average Number of Steps") + facet_wrap(~dayType , ncol = 1, nrow=2)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-13-1.png)<!-- -->

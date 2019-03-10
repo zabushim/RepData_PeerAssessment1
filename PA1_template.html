@@ -206,15 +206,13 @@ $(document).ready(function () {
 <div id="loading-and-preprocessing-the-data" class="section level2">
 <h2>Loading and preprocessing the data</h2>
 <p>Unzip data to obtain a csv file.</p>
-<pre class="r"><code>library(&quot;data.table&quot;)
-library(ggplot2)
+<pre class="r"><code>library(ggplot2)
 fileUrl &lt;- &quot;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot;
 download.file(fileUrl, destfile = paste0(getwd(), '/repdata%2Fdata%2Factivity.zip'))
 unzip(&quot;repdata%2Fdata%2Factivity.zip&quot;,exdir = &quot;data&quot;)</code></pre>
 </div>
 <div id="reading-csv-data-into-data.table." class="section level2">
 <h2>Reading csv Data into Data.Table.</h2>
-<pre class="r"><code>activityDT &lt;- data.table::fread(input = &quot;data/activity.csv&quot;)</code></pre>
 <pre class="r"><code>data &lt;- read.csv(&quot;data/activity.csv&quot;)</code></pre>
 </div>
 <div id="what-is-mean-total-number-of-steps-taken-per-day" class="section level2">
